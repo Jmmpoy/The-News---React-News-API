@@ -1,0 +1,264 @@
+.Right-Container {
+  flex-basis: 40%;
+  margin-top: 4rem;
+
+h1 {
+  margin-top: 1rem;
+  margin-left: 2rem;
+
+  @media (max-width: 650px) {
+    text-align: center;
+    font-size: 4rem;
+    margin-left: 0;
+  }
+}
+
+  .Right {
+  
+  flex-basis: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+
+  @media (max-width:650px) {
+     flex-direction: row;
+     flex-basis: 100%;
+     flex-wrap: wrap;
+    }
+
+  h1 {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+
+  &-article {
+    flex-grow: 1;
+    padding: 2rem;
+    box-shadow: 0 1px 0 0 black;
+    display: flex;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: black;
+        transition: 0.6s;
+        transition-delay: 0.2;
+      }
+
+      &:hover {
+        
+        
+        &::after {
+          width: 30%;
+        }
+      }
+
+
+    @media (max-width:650px) {
+      width: 40%;
+      margin: 2rem;
+      box-shadow: none;
+     
+    }
+    
+    a{
+      display: flex;
+      text-decoration: none;
+      color: black;
+      align-items: center;
+      width: 100%;
+
+      @media (max-width: 840px) {
+        flex-direction: column;
+        text-align: center;
+
+        div:nth-child(2){
+          padding: 2rem;
+        }
+      }
+    }
+
+    div {
+      flex-basis: 50%;
+
+      img {
+        max-width: 120px;
+        height: 120px;
+        width: 100%;
+      }
+
+      h4 {
+        font-size: 14px;
+        font-weight: 400;
+      }
+
+      p{
+        margin-top: 1rem;
+        font-style: italic;
+      }
+    }
+
+  }
+
+  &-article:last-child{
+    box-shadow: none;
+
+    @media (max-width:650px) {
+      box-shadow: 0 1px 0 0 black;
+    }
+  }
+
+  
+}
+}
+
+.Left-Container {
+
+  flex-basis: 60%;
+  margin-top: 4rem;
+
+  .News-SubMenu {
+  display: flex;
+  padding: 1rem;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+
+  &-Categories {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: auto;
+
+    @media(max-width: 650px){
+      width: 80%;
+    }
+
+    
+
+    li {
+      list-style-type: none;
+      position: relative;
+      
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -11px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background: black;
+        transition: 0.6s;
+        transition-delay: 0.2;
+      }
+
+      &:hover {
+        
+        &::after {
+          width: 100%;
+        }
+      }
+
+      button{
+        background: transparent;
+        border: none;
+        font-family: 'Josefin Sans', sans-serif;
+        cursor: pointer;
+        outline: none;
+       
+      }
+
+      
+    }
+  }
+}
+
+
+  .Left {
+  width: 100%;
+  margin: 1rem;
+  display: grid;
+  grid-gap: 1rem;
+
+  @media (max-width: 650px) {
+    
+    margin: auto;
+  }
+
+  // à partir de 600 px
+  @media (min-width: 650px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  // 900 et + 
+  @media (min-width: 950px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .article {
+    // background-color: dodgerblue;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: 1s;
+    a{
+      text-decoration: none;
+      color: black;
+    }
+    &-img {
+      
+      flex-grow: 3;
+      img {
+        max-width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+    }
+
+    &-text {
+      // background: salmon;
+      flex-grow: 1;
+      margin-top: 1.5rem;
+
+      p{
+        margin-top: 1rem;
+        font-size: 12px;
+      }
+
+      p:nth-child(2){
+        font-style: italic;
+        font-size: 10px;
+      }
+    }
+
+    @media (max-width: 650px) {
+      justify-content: center;
+
+      a{
+        text-align: center;
+      }
+    }
+  }
+
+  .article:first-child{
+    // background-color: red;
+    display: flex;
+    flex-direction: row;
+  }
+
+ 
+}
+}
+
+.Right,
+.Left {
+  margin-top: 4rem;
+}
