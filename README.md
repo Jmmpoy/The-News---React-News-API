@@ -1,7 +1,13 @@
-
-# react-news-api
+# REACT NEWS API BLOG
 
 This projects is a  blog called "The News" made in React.
+
+
+# SCREENSHOTS
+
+<img src="https://github.com/Jmmpoy/The-News---React-News-API/blob/master/src/screenshots/desktop.png" width="1000px"/>
+
+
 
 
 ### Installing
