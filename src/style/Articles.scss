@@ -1,9 +1,10 @@
 .News-Articles {
-    display: flex;
-    flex-grow: 1;
-    background: #fff9ef;
+  display: flex;
+  flex-grow: 1;
+  background: #fff9ef;
+  overflow: scroll;
 
-    @media (max-width: 650px) {
-        flex-direction: column;
-    }
+  @media (max-width: 650px) {
+    flex-direction: column;
+  }
 }

@@ -4,6 +4,10 @@
   padding: 0;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -13,7 +17,7 @@ body {
 }
 
 .News {
-  font-family: 'Josefin Sans', sans-serif;
+  font-family: "Josefin Sans", sans-serif;
   display: flex;
   flex-direction: column;
   height: 100vh;
