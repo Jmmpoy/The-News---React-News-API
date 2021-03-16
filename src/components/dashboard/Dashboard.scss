@@ -1,8 +1,10 @@
-.News-Articles {
+.Dashboard {
   display: flex;
+  flex-direction: column;
   flex-grow: 1;
   background: #fff9ef;
-  overflow: scroll;
+  padding: 2rem;
+  width: 95vw;
 
   @media (max-width: 650px) {
     flex-direction: column;

@@ -1,0 +1,24 @@
+.Dashboard-Filter {
+  &-List {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+
+    .hashtag {
+      font-size: 1.2rem;
+      list-style-type: none;
+
+      a {
+        background: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        color: #9da0a5;
+        text-decoration: none;
+        &:hover {
+          color: black;
+        }
+      }
+    }
+  }
+}

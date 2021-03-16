@@ -1,0 +1,28 @@
+.Dashboard-Filter-List {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.Dashboard-Filter-List .hashtag {
+  font-size: 1.2rem;
+  list-style-type: none;
+}
+
+.Dashboard-Filter-List .hashtag a {
+  background: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #9da0a5;
+  text-decoration: none;
+}
+
+.Dashboard-Filter-List .hashtag a:hover {
+  color: black;
+}
+/*# sourceMappingURL=Filter.css.map */

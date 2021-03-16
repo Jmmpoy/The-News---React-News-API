@@ -1,0 +1,76 @@
+.Dashboard-Search {
+  height: 10vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.Dashboard-Search .Dashboard-Filter {
+  -ms-flex-preferred-size: 60%;
+  flex-basis: 60%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.Dashboard-Search .Dashboard-SearchBar {
+  position: relative;
+  -ms-flex-preferred-size: 20%;
+  flex-basis: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+}
+
+.Dashboard-Search .Dashboard-SearchBar input {
+  height: 100%;
+  outline: none;
+  border: none;
+  -ms-flex-preferred-size: 90%;
+  flex-basis: 90%;
+  position: relative;
+  background: transparent;
+  border-bottom: 0.6px solid black;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.Dashboard-Search .Dashboard-SearchBar input:focus {
+  border-bottom: 1px solid red;
+}
+
+.Dashboard-Search .Dashboard-SearchBar ::-webkit-input-placeholder {
+  font-size: 10px;
+}
+
+.Dashboard-Search .Dashboard-SearchBar :-ms-input-placeholder {
+  font-size: 10px;
+}
+
+.Dashboard-Search .Dashboard-SearchBar ::-ms-input-placeholder {
+  font-size: 10px;
+}
+
+.Dashboard-Search .Dashboard-SearchBar ::placeholder {
+  font-size: 10px;
+}
+
+.Dashboard-Search .Dashboard-SearchBar button {
+  background: transparent;
+  outline: none;
+  border: none;
+}
+/*# sourceMappingURL=Search.css.map */

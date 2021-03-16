@@ -1,13 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion";
-import { useAPI } from "../../Context/TechContext";
-export default function tech() {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  const { data } = useAPI();
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useEffect(() => {
-    console.log("tech news", data);
-  }, []);
+import { GenericContext } from "../../Context/GenericContext";
+
+export default function GenericArticle() {
+  const { data } = useContext(GenericContext);
+
   return (
     <>
       {data
@@ -26,7 +23,6 @@ export default function tech() {
               <div className="article-img">
                 <img src={article.urlToImage} alt="img" />
               </div>
-
               <div className="article-text">
                 <p>{article.title}</p>
                 <p>{article.author}</p>
