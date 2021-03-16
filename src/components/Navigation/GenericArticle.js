@@ -4,7 +4,7 @@ import { GenericContext } from "../../Context/GenericContext";
 
 export default function GenericArticle() {
   const { data } = useContext(GenericContext);
-
+  console.log('data generic article', data)
   return (
     <>
       {data

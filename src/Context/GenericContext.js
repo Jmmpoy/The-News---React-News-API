@@ -10,20 +10,23 @@ export const GenericContextProvider = (props) => {
   //const searchRequest = `https://newsapi.org/v2/everything?page=1&q=${category}&pageSize=100&apiKey=${apiKey}`;
   const queryRequest = `https://newsapi.org/v2/everything?page=1&q=${category}&pageSize=100&apiKey=${apiKey}`;
   const request = `https://newsapi.org/v2/top-headlines?category=${category}&pageSize=100&country=us&apiKey=${apiKey}`;
-
-  useEffect(() => {
-    console.log("category", category);
-    const fetchData = async () => {
+  const fetchData = async () => {
+    try {
       if (category === "politics" || "design" || query.length > 0) {
         const { data } = await axios.get(queryRequest);
         setData(data.articles);
-        await console.log(data);
+        console.log(data);
       } else {
         const { data } = await axios.get(request);
         setData(data.articles);
         await console.log(data);
       }
-    };
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    console.log("category", category);
     fetchData();
   }, [category, request, queryRequest]);
 

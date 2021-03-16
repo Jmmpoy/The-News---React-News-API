@@ -29,4 +29,13 @@ body {
   height: 100vh;
   background-color: #fffefc;
 }
+
+@media (max-width: 750px) {
+  .Container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
 /*# sourceMappingURL=App.css.map */

@@ -44,7 +44,7 @@ export default function Header() {
         Sign In
       </motion.div>
       <motion.div className="Menu-Subscribe" variants={item}>
-        <p>Subscribe</p>
+        <p>Infos</p>
       </motion.div>
     </motion.section>
   );

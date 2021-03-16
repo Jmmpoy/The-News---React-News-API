@@ -1,8 +1,18 @@
 .Dashboard-Filter {
+  @media (max-width: 750px) {
+    width: 100%;
+  }
+
   &-List {
     display: flex;
     list-style-type: none;
     justify-content: space-between;
+
+    @media (max-width: 450px) {
+      width: 100%;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
 
     .hashtag {
       font-size: 1.2rem;
@@ -19,6 +29,10 @@
           color: black;
         }
       }
+    }
+
+    @media (max-width: 450px) {
+      // width: 25%;
     }
   }
 }

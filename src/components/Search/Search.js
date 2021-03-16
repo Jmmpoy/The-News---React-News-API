@@ -14,18 +14,22 @@ export default function Search() {
     console.log(searchInput);
   };
 
-  // useEffect(() => {
-  //   const search = async () => {
-  //     const results = await data.filter((article) =>
-  //       article.includes(searchInput)
-  //     );
-  //     console.log(("data is :", data));
-  //     console.log(results);
-  //     setData(results);
-  //   };
+  useEffect(() => {
+    if (data.length > 0) {
+      console.log(("data is :", data));
+    }
 
-  //   search();
-  // }, [searchInput]);
+    // const search = async () => {
+    //   const results = await data.filter((article) =>
+    //     article.includes(searchInput)
+    //   );
+    //   await console.log(("data is :", data));
+    //   //console.log(results);
+    //   //setData(results);
+    // };
+
+    // search();
+  }, [searchInput]);
 
   return (
     <section className="Dashboard-Search">

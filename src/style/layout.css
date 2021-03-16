@@ -12,6 +12,12 @@
   }
 }
 
+@media (max-width: 750px) {
+  .Dashboard-Container {
+    margin-top: 4rem;
+  }
+}
+
 @media (min-width: 650px) {
   .Dashboard-Container {
     -ms-grid-columns: (1fr)[2];
