@@ -1,46 +1,60 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext} from "react";
 import Filter from "./Filter";
 import { FaSearch } from "react-icons/fa";
-
-import "./Search.scss";
+import { MdClear } from "react-icons/md";
 import { GenericContext } from "../../Context/GenericContext";
+import "./Search.scss";
 export default function Search() {
-  const [searchInput, setSearchInput] = useState("");
-  const { data, setData } = useContext(GenericContext);
-
+  const { setQuery,setLoading, setCategory,loading } = useContext(
+    GenericContext
+  );
+  const [input, setInput] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
+  
   const handleChange = (e) => {
-    e.preventDefault();
-    setSearchInput(e.target.value);
-    console.log(searchInput);
+    setInput(e.target.value);  
   };
 
-  useEffect(() => {
-    if (data.length > 0) {
-      console.log(("data is :", data));
-    }
+  const handleSearch = (e) => {
+    setLoading(true);
+    e.preventDefault();
+    setQuery(input);
+    setCategory("");
+  };
 
-    // const search = async () => {
-    //   const results = await data.filter((article) =>
-    //     article.includes(searchInput)
-    //   );
-    //   await console.log(("data is :", data));
-    //   //console.log(results);
-    //   //setData(results);
-    // };
+  const handleFocus = () => {
+    setIsFocused(true);
+    setInput("");
+  }
 
-    // search();
-  }, [searchInput]);
+  const handleBlur = () => {
+    setIsFocused(false);
+  }
+
+  const Clear = () => {
+    setInput("");
+  }
+  
 
   return (
     <section className="Dashboard-Search">
       <Filter />
       <div className="Dashboard-SearchBar">
+        <div className="Dashboard-SearchBar-InputBlock">
         <input
+          type="text"
           placeholder="Search"
-          value={searchInput}
+          value={input}
           onChange={handleChange}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          
         />
-        <button>
+        <button className="clear" style={{visibility: input !== "" ? 'visible' : 'hidden' }} onClick={Clear}>
+          <MdClear/>
+        </button>
+        </div>
+        <button className="submit" onClick={(e) => handleSearch(e)} disabled={loading} >
           <FaSearch />
         </button>
       </div>

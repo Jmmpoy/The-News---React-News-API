@@ -1,5 +1,5 @@
 import React from "react";
-import Hamburger from "hamburger-react";
+//import Hamburger from "hamburger-react";
 import "./Header.scss";
 import { motion } from "framer-motion";
 
@@ -28,7 +28,7 @@ export default function Header() {
     },
   };
 
-  const items = [{ title: "the News", className: "Menu-Title" }];
+  //const items = [{ title: "the News", className: "Menu-Title" }];
 
   return (
     <motion.section

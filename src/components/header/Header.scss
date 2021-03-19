@@ -1,16 +1,12 @@
 .Menu {
   display: flex;
-  flex-direction: column;
   background-color: #fdfbf8;
-  width: 5vw;
-  margin-top: 2rem;
+  width: 100%;
+  flex-direction: row;
+  padding: 2rem;
+  margin-top:2rem;
   margin-bottom: 2rem;
-
-  @media (max-width: 750px) {
-    width: 100%;
-    flex-direction: row;
-    padding: 2rem;
-  }
+  
 
   div {
     text-align: center;
@@ -31,17 +27,21 @@
   // Title
   .Menu-Title {
     justify-content: start;
-    font-size: 1.6rem;
-    @media (max-width: 750px) {
-      flex-basis: 70%;
+    font-size: 3rem;
+    flex-basis: 70%;
       text-align: start;
+    @media (max-width: 750px) {
+      font-size: 2rem;
     }
   }
 
   .Menu-Sign,
   .Menu-Subscribe {
+     flex-basis: 15%;
+     font-size: 1.5rem;
+     cursor: pointer;
     @media (max-width: 750px) {
-      flex-basis: 15%;
+      font-size: 1.2rem;
     }
   }
 }

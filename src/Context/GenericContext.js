@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState} from "react";
 import axios from "axios";
 export const GenericContext = React.createContext();
 
@@ -6,42 +6,48 @@ export const GenericContextProvider = (props) => {
   const [data, setData] = useState([]);
   const [category, setCategory] = useState("general");
   const [query, setQuery] = useState("");
+  const [loading, setLoading] = useState(true);
   const apiKey = process.env.REACT_APP_NEWS_API_KEY;
-  //const searchRequest = `https://newsapi.org/v2/everything?page=1&q=${category}&pageSize=100&apiKey=${apiKey}`;
-  const queryRequest = `https://newsapi.org/v2/everything?page=1&q=${category}&pageSize=100&apiKey=${apiKey}`;
-  const request = `https://newsapi.org/v2/top-headlines?category=${category}&pageSize=100&country=us&apiKey=${apiKey}`;
-  const fetchData = async () => {
+  const queryRequest = `https://newsapi.org/v2/everything?page=1&q=${query}&pageSize=100&apiKey=${apiKey}`;
+  const categoryRequest = `https://newsapi.org/v2/top-headlines?category=${category}&pageSize=100&country=us&apiKey=${apiKey}`;
+  const loadState = async () => {
+    console.log("load state async");
     try {
-      if (category === "politics" || "design" || query.length > 0) {
+      if (query !== "") {
         const { data } = await axios.get(queryRequest);
         setData(data.articles);
-        console.log(data);
-      } else {
-        const { data } = await axios.get(request);
+      } else if (category !== null) {
+        const { data } = await axios.get(categoryRequest);
         setData(data.articles);
-        await console.log(data);
+        //setQuery
       }
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
+      console.log("fetchInitializedData");
     }
   };
+
+  // FETCH DATA ON INIT
   useEffect(() => {
-    console.log("category", category);
-    fetchData();
-  }, [category, request, queryRequest]);
+    loadState();
+    console.log("context");
+  }, [category, query, loading,]);
 
   return (
     <GenericContext.Provider
-      value={{ data, setData, category, setCategory, query, setQuery }}>
+      value={{
+        data,
+        setData,
+        category,
+        setCategory,
+        query,
+        setQuery,
+        loading,
+        setLoading,
+      }}>
       {props.children}
     </GenericContext.Provider>
   );
 };
-
-export function useAPI() {
-  const context = useContext(GenericContext);
-  if (context === undefined) {
-    throw new Error("Context must be used within a Provider");
-  }
-  return context;
-}

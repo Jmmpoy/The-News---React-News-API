@@ -32,6 +32,11 @@
       flex-basis: 70%;
     }
 
+    .Dashboard-SearchBar-InputBlock{
+      display:flex;
+      position: relative;
+    }
+
     input {
       height: 100%;
       outline: none;
@@ -42,6 +47,7 @@
       border-bottom: 0.6px solid black;
       transition: all 0.5s;
       font-size: 2rem;
+      font-weight: bold;
       @media (max-width: 750px) {
         flex-basis: 100%;
         font-weight: bold;
@@ -52,8 +58,9 @@
     }
 
     ::placeholder {
-      font-size: 10px;
+      font-size: 2rem;
       opacity: 0.7;
+      font-weight:bold;
 
       @media (max-width: 750px) {
         font-size: 2rem;
@@ -65,6 +72,28 @@
       background: transparent;
       outline: none;
       border: none;
+      cursor: pointer;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+
+      svg{
+        font-size:1.5rem;
+
+       @media (max-width: 750px) {
+        margin-top:1.5rem;
+      }
+      }
+    }
+
+    .clear{
+      right: 20px;
+      position: absolute;
+      top: 5px;
+    }
+
+    .submit{
+
     }
   }
 }

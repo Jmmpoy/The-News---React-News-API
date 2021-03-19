@@ -22,8 +22,6 @@ body {
   flex-direction: row;
   height: 100vh;
   background-color: #fffefc;
-
-  @media (max-width: 750px) {
-    flex-direction: column;
-  }
+  flex-direction: column;
+  
 }
